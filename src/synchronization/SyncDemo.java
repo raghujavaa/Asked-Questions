@@ -38,7 +38,7 @@ class ThreadedSend extends Thread {
 		// at a time.
 		synchronized (sender) 
 		{
-		// synchronizing the snd object
+			// synchronizing the snd object
 			sender.send(msg);
 		}
 	}
