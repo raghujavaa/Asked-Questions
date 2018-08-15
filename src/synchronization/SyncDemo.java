@@ -3,20 +3,21 @@
  */
 package synchronization;
 
-//A Java program to demonstrate working of
-//synchronized.
+//A Java program to demonstrate working of synchronized.
 
-//A Class used to send a message
+//Sender Class used to send a message:
 class Sender {
-	public void send(String msg) {
+	public void send(String msg) 
+	{
 		System.out.println("Sending\t" + msg);
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			System.out.println("Thread  interrupted.");
 		}
+	
 		System.out.println("\n" + msg + "Sent");
-	}
+	}//send()
 }
 
 // Class for send a message using Threads
@@ -25,8 +26,7 @@ class ThreadedSend extends Thread {
 	private Thread t;
 	Sender sender;
 
-	// Recieves a message object and a string
-	// message to be sent
+	// Recieves a message object and a string message to be sent
 	ThreadedSend(String m, Sender obj) {
 		msg = m;
 		sender = obj;
@@ -34,15 +34,15 @@ class ThreadedSend extends Thread {
 
 	public void run() 
 	{
-		// Only one thread can send a message
-		// at a time.
+		// Only one thread can send a message at a time.
 		synchronized (sender) 
 		{
 			// synchronizing the snd object
 			sender.send(msg);
-		}
-	}
-}
+		}//synchronized
+	
+	}//run()
+}//ThreadedSend class
 
 // Driver class
 class SyncDemo {
@@ -51,19 +51,19 @@ class SyncDemo {
 		ThreadedSend S1 = new ThreadedSend(" Hi ", snd);
 		ThreadedSend S2 = new ThreadedSend(" Bye ", snd);
 
-		// Start two threads of ThreadedSend type
+		// Start two threads of ThreadedSend type:
 		S1.start();
 		S2.start();
 
-		// wait for threads to end
+		// wait for threads to end:
 		try {
 			S1.join();
 			S2.join();
 		} catch (Exception e) {
 			System.out.println("Interrupted");
 		}
-	}
-}
+	}//main()
+}//main class
 
 /*
  * The output is same every-time we run the program.
