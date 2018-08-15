@@ -32,10 +32,12 @@ class ThreadedSend extends Thread {
 		sender = obj;
 	}
 
-	public void run() {
+	public void run() 
+	{
 		// Only one thread can send a message
 		// at a time.
-		synchronized (sender) {
+		synchronized (sender) 
+		{
 			// synchronizing the snd object
 			sender.send(msg);
 		}
