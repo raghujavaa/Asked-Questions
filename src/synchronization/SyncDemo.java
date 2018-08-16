@@ -7,17 +7,16 @@ package synchronization;
 
 //Sender Class used to send a message:
 class Sender {
-	public void send(String msg) 
-	{ 
+	public void send(String msg) {
 		System.out.println("Sending\t" + msg);
 		try {
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			System.out.println("Thread  interrupted.");
 		}
-	
+
 		System.out.println("\n" + msg + "Sent");
-	}//send()
+	}// send()
 }
 
 // Class for send a message using Threads
@@ -32,17 +31,15 @@ class ThreadedSend extends Thread {
 		sender = obj;
 	}
 
-	public void run() 
-	{
+	public void run() {
 		// Only one thread can send a message at a time.
-		synchronized (sender) 
-		{
+		synchronized (sender) {
 			// synchronizing the snd object
 			sender.send(msg);
-		}//synchronized
-	
-	}//run()
-}//ThreadedSend class
+		}// synchronized
+
+	}// run()
+}// ThreadedSend class
 
 // Driver class
 class SyncDemo {
@@ -62,8 +59,8 @@ class SyncDemo {
 		} catch (Exception e) {
 			System.out.println("Interrupted");
 		}
-	}//main()
-}//main class
+	}// main()
+}// main class
 
 /*
  * The output is same every-time we run the program.

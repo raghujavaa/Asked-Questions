@@ -4,9 +4,11 @@ package legacyClasses;
 //put(), elements(), get(), isEmpty(), keys()
 //remove(), size()
 
-import java.util.*;
+import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
-public class New_Class {
+public class DictionaryClass {
 	public static void main(String[] args) {
 
 		// Initializing a Dictionary

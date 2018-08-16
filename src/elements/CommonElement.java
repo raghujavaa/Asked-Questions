@@ -5,7 +5,7 @@ import java.util.HashSet;
 class CommonElements {
 	public static void main(String[] args) {
 		String[] s1 = { "ONE", "TWO", "THREE", "FOUR", "FIVE", "FOUR" };
-
+ 
 		String[] s2 = { "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "FOUR" };
 
 		HashSet<String> set = new HashSet<String>();
