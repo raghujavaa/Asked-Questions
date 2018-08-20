@@ -41,7 +41,7 @@ class ThreadedSend extends Thread {
 	}// run()
 }// ThreadedSend class
 
-// Driver class
+// Driver class Demo Program:
 class SyncDemo {
 	public static void main(String args[]) {
 		Sender snd = new Sender();
